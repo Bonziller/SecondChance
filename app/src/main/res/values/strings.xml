@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">SecondChance</string>
-
+    <string name="app_name" translatable="false">SecondChance</string>
+    
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    
+    <string name="sidemenu_import">Import</string>
+    <string name="sidemenu_gallery">Gallery</string>
+    <string name="sidemenu_slideshow">Slideshow</string>
+    <string name="sidemenu_tools">Tools</string>
+    <string name="sidemenu_headline_communicate">Communicate</string>
+    <string name="sidemenu_share">Share</string>
+    <string name="sidemenu_send">Send</string>
     <string name="action_settings">Settings</string>
 </resources>
