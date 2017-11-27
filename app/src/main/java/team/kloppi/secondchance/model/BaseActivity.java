@@ -63,17 +63,17 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Toast.makeText(this,"Import",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_import,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_gallery) {
-            Toast.makeText(this,"Gallery",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_gallery,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_slideshow) {
-            Toast.makeText(this,"Slideshow",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_slideshow,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_manage) {
-            Toast.makeText(this,"Tools",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_tools,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_share) {
-            Toast.makeText(this,"Share",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_share,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_send) {
-            Toast.makeText(this,"Send",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.sidemenu_send,Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

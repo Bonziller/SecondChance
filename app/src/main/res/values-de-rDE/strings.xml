@@ -10,4 +10,5 @@
     <string name="sidemenu_headline_communicate">Kommunizieren</string>
     <string name="sidemenu_share">Teilen</string>
     <string name="sidemenu_send">Senden</string>
+    <string name="hello_world">Hallo Welt !</string>
 </resources>
