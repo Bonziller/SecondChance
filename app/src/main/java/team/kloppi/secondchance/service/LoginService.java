@@ -11,7 +11,7 @@ import team.kloppi.secondchance.constants.Constants;
 
 public class LoginService {
 
-    private SharedPreferences speicher;
+    private SharedPreferences storage;
 
     /**
      * Überprüft, ob das Handy bereits gespeicherte Nutzerdaten enthält.
@@ -19,9 +19,9 @@ public class LoginService {
      * @return true, wenn email und password im Handy hinterlegt sind. false, wenn nichts hinterlegt ist.
      */
     public boolean isUserLoggedIn(Context context){
-        speicher = context.getSharedPreferences("userdata",0);
-        if(speicher != null && speicher.getString(Constants.EMAIL,null) != null
-                && speicher.getString(Constants.PASSWORD,null) != null){
+        storage = context.getSharedPreferences("userdata",0);
+        if(storage != null && storage.getString(Constants.EMAIL,null) != null
+                && storage.getString(Constants.PASSWORD,null) != null){
             return true;
         }
         return false;
@@ -36,9 +36,9 @@ public class LoginService {
      * @param password Das Password, vom User.
      */
     public void rememberUserData(Context context,String email, String password){
-            speicher = context.getSharedPreferences("userdata",0);
+            storage = context.getSharedPreferences("userdata",0);
             SharedPreferences.Editor editor;
-            editor = speicher.edit();
+            editor = storage.edit();
             editor.putString(Constants.EMAIL,email);
             editor.putString(Constants.PASSWORD,password);
             editor.apply();
@@ -50,9 +50,9 @@ public class LoginService {
      * @return String, wenn eine Email auf dem Handy hinterlegt wurde. Null, wenn nichts hinterlegt wurde.
      */
     public String getStoredEmail(Context context){
-        speicher = context.getSharedPreferences("userdata",0);
-        if(speicher != null){
-            return speicher.getString(Constants.EMAIL,null);
+        storage = context.getSharedPreferences("userdata",0);
+        if(storage != null){
+            return storage.getString(Constants.EMAIL,null);
         }
         return null;
     }
@@ -63,9 +63,9 @@ public class LoginService {
      * @return String, wenn ein Passwort auf dem Handy hinterlegt wurde. Null, wenn nichts hinterlegt wurde.
      */
     public String getStoredPassword(Context context){
-        speicher = context.getSharedPreferences("userdata",0);
-        if(speicher != null){
-            return speicher.getString(Constants.PASSWORD,null);
+        storage = context.getSharedPreferences("userdata",0);
+        if(storage != null){
+            return storage.getString(Constants.PASSWORD,null);
         }
         return null;
     }
