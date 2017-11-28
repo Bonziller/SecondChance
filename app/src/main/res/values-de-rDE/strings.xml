@@ -11,4 +11,14 @@
     <string name="sidemenu_share">Teilen</string>
     <string name="sidemenu_send">Senden</string>
     <string name="hello_world">Hallo Welt !</string>
+    <string name="title_activity_login">Einloggen</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort</string>
+    <string name="action_sign_in">Einloggen oder Registrieren</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">Die eingegebene Adresse ist ungültig</string>
+    <string name="error_invalid_password">Das eingegebene Passwort ist zu kurz</string>
+    <string name="error_incorrect_password">Das eingegebene Passwort ist falsch</string>
+    <string name="error_field_required">Pflichtfeld</string>
+    <string name="permission_rationale">Kontakt Berechtigung wird benötigt</string>
 </resources>

@@ -19,7 +19,7 @@ public class LoginService {
      * @return true, wenn email und password im Handy hinterlegt sind. false, wenn nichts hinterlegt ist.
      */
     public boolean isUserLoggedIn(Context context){
-        storage = context.getSharedPreferences("userdata",0);
+        storage = context.getSharedPreferences(Constants.USERDATA,0);
         if(storage != null && storage.getString(Constants.EMAIL,null) != null
                 && storage.getString(Constants.PASSWORD,null) != null){
             return true;
@@ -36,7 +36,7 @@ public class LoginService {
      * @param password Das Password, vom User.
      */
     public void rememberUserData(Context context,String email, String password){
-            storage = context.getSharedPreferences("userdata",0);
+            storage = context.getSharedPreferences(Constants.USERDATA,0);
             SharedPreferences.Editor editor;
             editor = storage.edit();
             editor.putString(Constants.EMAIL,email);
@@ -50,7 +50,7 @@ public class LoginService {
      * @return String, wenn eine Email auf dem Handy hinterlegt wurde. Null, wenn nichts hinterlegt wurde.
      */
     public String getStoredEmail(Context context){
-        storage = context.getSharedPreferences("userdata",0);
+        storage = context.getSharedPreferences(Constants.USERDATA,0);
         if(storage != null){
             return storage.getString(Constants.EMAIL,null);
         }
@@ -63,7 +63,7 @@ public class LoginService {
      * @return String, wenn ein Passwort auf dem Handy hinterlegt wurde. Null, wenn nichts hinterlegt wurde.
      */
     public String getStoredPassword(Context context){
-        storage = context.getSharedPreferences("userdata",0);
+        storage = context.getSharedPreferences(Constants.USERDATA,0);
         if(storage != null){
             return storage.getString(Constants.PASSWORD,null);
         }
