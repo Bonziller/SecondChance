@@ -1,4 +1,4 @@
-package team.kloppi.secondchance.report;
+package team.kloppi.secondchance.notification;
 
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -7,7 +7,7 @@ import android.view.View;
  * Created by Bonziller on 27.11.2017.
  */
 
-public class Report {
+public class NotificationHandler {
 
     /**
      * Eine Nachricht erscheint beiläufig von unten, ohne den Benutzer zu nötigen diese wegklicken zu müssen.

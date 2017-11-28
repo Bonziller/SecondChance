@@ -48,7 +48,7 @@ public class LoginController extends BaseActivity {
             if(user != null){
                 login(user);
             }else{
-                // Login fehlgeschlagen, gib eine Report aus
+                // Login fehlgeschlagen, benutze NotificationHandler.
             }
         }
     }
