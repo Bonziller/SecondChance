@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "669931182367",
+    "firebase_url": "https://secondchance-3bc8c.firebaseio.com",
+    "project_id": "secondchance-3bc8c",
+    "storage_bucket": "secondchance-3bc8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669931182367:android:d1960e49549c83f1",
+        "android_client_info": {
+          "package_name": "team.kloppi.secondchance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669931182367-pe9asla7pspu8jh4tk3snn0qbhjisr6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTPJIR7zhxqE86SlG1cG_a6ltHntvXtM4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

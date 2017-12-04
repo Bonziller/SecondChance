@@ -2,14 +2,20 @@ package team.kloppi.secondchance.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 
 import team.kloppi.secondchance.constants.Constants;
+import team.kloppi.secondchance.model.BaseActivity;
 
 /**
  * Created by Bonziller on 27.11.2017.
  */
 
-public class LoginService {
+public class LoginService extends BaseDBService{
 
     private SharedPreferences storage;
 
@@ -18,13 +24,34 @@ public class LoginService {
      * @param context Context der momentan aktiven Activity (Wahrscheinlich LoginController)
      * @return true, wenn email und password im Handy hinterlegt sind. false, wenn nichts hinterlegt ist.
      */
-    public boolean isUserLoggedIn(Context context){
+    public boolean isUserKnown(Context context){
         storage = context.getSharedPreferences(Constants.USERDATA,0);
         if(storage != null && storage.getString(Constants.EMAIL,null) != null
                 && storage.getString(Constants.PASSWORD,null) != null){
             return true;
         }
         return false;
+    }
+
+    public boolean isUserInDatabase(){
+        return getCurrentUser() != null;
+    }
+
+    public void signIn(BaseActivity activity, String email, String password){
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    // Anmeldung erfolgreich
+                }else{
+                    // Anmeldung fehlgeschlagen
+                }
+            }
+        });
+    }
+
+    public void signInWithListener(BaseActivity activity, String email, String password, OnCompleteListener onCompleteListener){
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, onCompleteListener);
     }
 
     /**
