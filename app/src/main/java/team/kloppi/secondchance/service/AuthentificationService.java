@@ -15,7 +15,7 @@ import team.kloppi.secondchance.model.BaseActivity;
  * Created by Bonziller on 27.11.2017.
  */
 
-public class LoginService extends BaseDBService{
+public class AuthentificationService extends BaseDBService{
 
     private SharedPreferences storage;
 
@@ -33,23 +33,42 @@ public class LoginService extends BaseDBService{
         return false;
     }
 
-    public boolean isUserInDatabase(){
+    /**
+     * Überprüft, ob der User bereits eingeloggt ist
+     * @return True, wenn der User eingeloggt ist. False, wenn nicht.
+     */
+    public boolean isUserAlreadyLoggedIn(){
         return getCurrentUser() != null;
     }
 
+    /**
+     * Dies ist die "Normale" Authentifizierung (Nur mit Email und Passwort) und hat rein gar nichts mit dem "Google, Facebook, Twitter..." Login Verfahren zu tun.
+     * Loggt den User ein, sollten die Daten (email und password) mit der Datenbank übereinstimmen
+     * @param activity Die Activity, von wo aus der Login-Prozess gestartet wurrde
+     * @param email Die Email, mit dem sich der User anmelden möchte
+     * @param password Das Password, mit dem sich der User anmelden möchte
+     */
     public void signIn(BaseActivity activity, String email, String password){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    // Anmeldung erfolgreich
+                    // Anmeldung erfolgreich, was nun? (Activity wechseln...)
                 }else{
-                    // Anmeldung fehlgeschlagen
+                    // Anmeldung fehlgeschlagen, was nun? (Anzeigen, dass es nicht geklappt hat...)
                 }
             }
         });
     }
 
+    /**
+     * Dies ist die "Normale" Authentifizierung (Nur mit Email und Passwort) und hat rein gar nichts mit dem "Google, Facebook, Twitter..." Login Verfahren zu tun.
+     * Loggt den User ein, sollten die Daten (email und password) mit der Datenbank übereinstimmen
+     * @param activity Die Activity, von wo aus der Login-Prozess gestartet wurrde
+     * @param email Die Email, mit dem sich der User anmelden möchte
+     * @param password Das Password, mit dem sich der User anmelden möchte
+     * @param onCompleteListener Der Listener, welcher eine Antwort bezüglich des Log-In's zurückgibt. (task.isSuccessful == Eingeloggt)
+     */
     public void signInWithListener(BaseActivity activity, String email, String password, OnCompleteListener onCompleteListener){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, onCompleteListener);
     }

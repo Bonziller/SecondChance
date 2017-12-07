@@ -6,7 +6,7 @@ package team.kloppi.secondchance.constants;
 
 public class Constants {
 
-    // LoginService
+    // AuthentificationService
     public static final String EMAIL = "EMAIL";
     public static final String PASSWORD = "PASSWORD";
     public static final String USERDATA = "USERDATA";
